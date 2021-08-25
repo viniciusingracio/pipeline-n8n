@@ -3,11 +3,14 @@ pipeline {
 
     stages {
 
-        stage('Dockerhub Image') {
-            agent {
-                docker { image 'n8nio/n8n' }
-    }
-        }
+
+
+
+   
+
+                
+
+       
 
         stage('Deploy Kubernetes') {
             agent {
