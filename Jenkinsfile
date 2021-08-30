@@ -3,15 +3,6 @@ pipeline {
 
     stages {
 
-
-
-
-   
-
-                
-
-       
-
         stage('Deploy Kubernetes') {
             agent {
                 kubernetes {
@@ -25,7 +16,7 @@ pipeline {
             steps {
                 sh 'sed -i "s/{{tag}}/$tag_version/g" ./k8s/n8n.yaml'
                 sh 'cat ./k8s/n8n.yaml'
-                kubernetesDeploy(configs: '**/k8s/**', kubeconfigId: 'kubeconfig')
+                kubernetesDeploy(configs: '**/k8s/n8n.yaml', kubeconfigId: 'kubeconfig')
             }
         }
     }
