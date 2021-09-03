@@ -17,10 +17,6 @@ spec:
         ports:
         - containerPort: 5678
         imagePullPolicy: Always
-        lifecycle:
-          preStop:
-            exec:
-              command: ["/bin/sleep","60"]
 
 ---
 
