@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: n8n-deploy
+    name: n8n
 spec:
-  selector:
-    matchLabels:
-      app: n8n
-  template: 
-    metadata:          
-      labels:
-        app: n8n
-    spec:            
-      containers:
-      - name: n8n
-        image: n8nio/n8n:latest
-        ports:
-        - containerPort: 5678
-        imagePullPolicy: Always
+    replicas: 5
+    selector:
+        matchLabels:
+            app: n8n
+    template:
+        metadata:
+            labels:
+                app: n8n
+        spec:
+            containers:
+                - name: n8n
+                  image: n8nio/n8n:latest
+                  ports:
+                    - containerPort: 5678
 
 ---
 
