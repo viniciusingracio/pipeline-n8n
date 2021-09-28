@@ -12,7 +12,7 @@ pipeline {
             
 
             steps {
-                kubernetesDeploy(configs: '**/kube/n8n.yaml/', kubeconfigId: 'kubeconfig')
+                kubernetesDeploy(configs: '**/kube/n8n.yaml/')
             }
         }
     }
